@@ -1,0 +1,72 @@
+<mat-nav-list>
+    <mat-list-item>
+        <a mat-list-item routerLink="/">
+            <span>Dashboard</span>
+        </a>
+    </mat-list-item>
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+            Employee
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/employee/create">
+                <span>Create Employee</span>
+            </a>
+            <a mat-list-item routerLink="/employee/details">
+                <span>View Employee</span>
+            </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+            Role
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/role/create">
+                <span>Create Role</span>
+            </a>
+            <a mat-list-item routerLink="/role/details">
+                <span>View Role</span>
+            </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+            Department
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/department/create">
+                <span>Create/Edit Department</span>
+            </a>
+            <a mat-list-item routerLink="/department/details">
+                <span>View Department</span>
+            </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+            Staff Leave
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/staff-leave/create">
+                <span>Approve Leave</span>
+            </a>
+            <a mat-list-item routerLink="/staff-leave/details">
+                <span>Create Leave</span>
+            </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+            Staff Notice
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item routerLink="#">
+                <span>View Notice</span>
+            </a>
+            <a mat-list-item routerLink="#">
+                <span>Create Notice</span>
+            </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+</mat-nav-list>

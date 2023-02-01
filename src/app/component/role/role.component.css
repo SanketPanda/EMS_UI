@@ -1,0 +1,73 @@
+.card-container{
+  position:fixed;
+  top: 40%;
+  left: 50%;
+  height:18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  background-color: #f3f3f3;
+}
+
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], textarea {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+border: none;
+background: #f1f1f1;
+}
+
+input[type=text]:focus, textarea:focus {
+background-color: #ddd;
+outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+color: white;
+padding: 16px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+
+/* Add a blue text color to links */
+a {
+color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+background-color: #f1f1f1;
+text-align: center;
+}
+
+.card-heading{
+text-align: center;
+}
+
+textarea{
+max-height: 240px;
+}
+
+.mat-mdc-card-header {
+display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
+font-size: xx-large;
+font-style: italic;
+}

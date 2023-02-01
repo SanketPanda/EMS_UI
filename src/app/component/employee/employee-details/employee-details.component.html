@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="p-3 mb-1 bg-dark text-white test">
+      <h4>All Employees</h4>
+  </div>
+  <div class="row">
+    <div class="container-fluid" style="padding: 5rem; padding-top: 2rem;">
+     <!-- Symbol Column -->
+        <table>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Department</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.department.name}}</td>
+            <td><a class="btn" (click)="editEmployee(employee)"><mat-icon [ngStyle]="{'color': 'green'}">edit</mat-icon></a></td>
+            <td><a  class="btn" (click)="deleteEmployee(employee)"><mat-icon [ngStyle]="{'color': 'red'}">delete_forever</mat-icon></a></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>
+
