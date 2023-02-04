@@ -18,10 +18,10 @@
                   First Name Name is required.
                 </div>
                 <div *ngIf="firstName.errors?.['minlength']">
-                  First Name must be at least 2 characters long.
+                  First Name must be at least 4 characters long.
                 </div>
                 <div *ngIf="firstName.errors?.['maxlength']">
-                  First Name must be at least 45 characters long.
+                  First Name must can not exceed 45 characters long.
                 </div>
               </div>
             </div>
@@ -35,10 +35,10 @@
                   Last Name Name is required.
                 </div>
                 <div *ngIf="lastName.errors?.['minlength']">
-                  Last Name must be at least 2 characters long.
+                  Last Name must be at least 4 characters long.
                 </div>
                 <div *ngIf="lastName.errors?.['maxlength']">
-                  Last Name must be at least 45 characters long.
+                  Last Name must can not exceed 45 characters long.
                 </div>
               </div>
             </div>

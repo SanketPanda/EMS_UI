@@ -20,7 +20,7 @@
                   Role Name must be at least 2 characters long.
                 </div>
                 <div *ngIf="roleName.errors?.['maxlength']">
-                  Role Name must be at least 45 characters long.
+                  Role Name can not exceed 45 characters long.
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                   Description must be at least 10 characters long.
                 </div>
                 <div *ngIf="description.errors?.['maxlength']">
-                  Description must be at least 100 characters long.
+                  Description can not exceed 100 characters long.
                 </div>
               </div>
             </div>
