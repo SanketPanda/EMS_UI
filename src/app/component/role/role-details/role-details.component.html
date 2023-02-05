@@ -1,10 +1,15 @@
-<div class="container-fluid">
-  <div class="p-3 mb-1 bg-dark text-white test">
-      <h4>All Roles</h4>
-  </div>
+<div class="container">
   <div class="row">
-    <div class="container-fluid" style="padding: 5rem; padding-top: 2rem;">
-     <!-- Symbol Column -->
+    <div class="col-12">
+      <div class="p-3 mt-5 bg-dark text-white">
+        <h4>All Roles</h4>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="table-container mt-5">
         <table>
           <tr>
             <th>Name</th>
@@ -15,10 +20,11 @@
           <tr *ngFor="let role of roles">
             <td>{{role.roleName}}</td>
             <td>{{role.description}}</td>
-            <td><a class="btn" (click)="editRole(role)"><mat-icon [ngStyle]="{'color': 'green'}">edit</mat-icon></a></td>
-            <td><a  class="btn" (click)="deleteRole(role)"><mat-icon [ngStyle]="{'color': 'red'}">delete_forever</mat-icon></a></td>
+            <td><a  *ngIf="role.roleName != 'EMPLOYEE'" class="btn" (click)="editRole(role)"><mat-icon [ngStyle]="{'color': 'green'}">edit</mat-icon></a></td>
+            <td><a   *ngIf="role.roleName != 'EMPLOYEE'" class="btn" (click)="deleteRole(role)"><mat-icon [ngStyle]="{'color': 'red'}">delete_forever</mat-icon></a></td>
           </tr>
         </table>
+      </div>
     </div>
   </div>
 </div>

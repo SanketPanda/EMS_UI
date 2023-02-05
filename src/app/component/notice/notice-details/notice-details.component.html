@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="p-3 mt-5 bg-dark text-white">
+        <h4>All Notices</h4>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container">
+      <div class="table-container mt-5">
+        <table>
+          <tr>
+            <th>Notice Title</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr *ngFor="let notice of noticeList">
+            <td>{{notice.noticeTitle}}</td>
+            <td>{{notice.description}}</td>
+            <td><a class="btn" (click)="editNotice(notice)"><mat-icon [ngStyle]="{'color': 'green'}">edit</mat-icon></a></td>
+            <td><a  class="btn" (click)="deleteNotice(notice)"><mat-icon [ngStyle]="{'color': 'red'}">delete_forever</mat-icon></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

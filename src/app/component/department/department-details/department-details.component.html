@@ -1,25 +1,32 @@
-<div class="container-fluid">
-    <div class="p-3 mb-1 bg-dark text-white test">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="p-3 mt-5 bg-dark text-white">
         <h4>All Departments</h4>
-    </div>
-    <div class="row">
-      <div class="container-fluid" style="padding: 5rem; padding-top: 2rem;">
-       <!-- Symbol Column -->
-          <table>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-            <tr *ngFor="let department of departments">
-              <td>{{department.name}}</td>
-              <td>{{department.description}}</td>
-              <td><a class="btn" (click)="editDepartment(department)"><mat-icon [ngStyle]="{'color': 'green'}">edit</mat-icon></a></td>
-              <td><a  class="btn" (click)="deleteDepartment(department)"><mat-icon [ngStyle]="{'color': 'red'}">delete_forever</mat-icon></a></td>
-            </tr>
-          </table>
       </div>
     </div>
-</div>
+  </div>
 
+  <div class="row">
+    <div class="container">
+      <div class="table-container mt-5">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr *ngFor="let department of departments">
+            <td>{{department.name}}</td>
+            <td>{{department.description}}</td>
+            <td><a *ngIf="department.name != 'IT'" class="btn" (click)="editDepartment(department)"><mat-icon
+                  [ngStyle]="{'color': 'green'}">edit</mat-icon></a></td>
+            <td><a *ngIf="department.name != 'IT'" class="btn" (click)="deleteDepartment(department)"><mat-icon
+                  [ngStyle]="{'color': 'red'}">delete_forever</mat-icon></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

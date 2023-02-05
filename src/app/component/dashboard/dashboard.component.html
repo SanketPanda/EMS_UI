@@ -1,11 +1,11 @@
-<div class="dashboard">
+<div class="container">
   <div class="row">
     <div class="container-fluid">
       <mat-card class="example-card">
         <mat-card-content>
           <div class="row">
             <div class="col-2">
-              <img src="../../../assets/images/male.jpg" alt="male.jpg" style="width:10rem">
+              <img src="../../../assets/images/male.jpg" alt="male.jpg" style="width:100%">
             </div>
             <div class="col-10" style="margin: auto;">
               <p class="heading">
@@ -19,8 +19,8 @@
     </div>
   </div>
 
-  <div class="row" style="margin-top: 2rem">
-    <div class="col-3">
+  <div class="row" style="margin-top: 2rem;">
+    <div class="col-lg-3 col-sm-12" style="margin: 1rem 0">
       <mat-card class="info-card">
         <mat-card-content>
           <div class="row">
@@ -35,7 +35,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-12" style="margin: 1rem 0">
       <mat-card class="info-card">
         <mat-card-content>
           <div class="row">
@@ -50,7 +50,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-12" style="margin: 1rem 0">
       <mat-card class="info-card">
         <mat-card-content>
           <div class="row">
@@ -65,13 +65,13 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-12" style="margin: 1rem 0">
       <mat-card class="info-card">
         <mat-card-content>
           <div class="row">
             <div class="col-8">
-              <p class="title">Pending Leave</p>
-              <p>To do.........</p>
+              <p class="title">Total Notice</p>
+              <a routerLink="/notice/details">{{totalNotice}}</a>
             </div>
             <div class="col-4" style="margin: auto; border-left: 0.1rem solid;">
               <mat-icon> contacts</mat-icon>
@@ -82,7 +82,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-5">
+    <div class="col-lg-5 col-sm-3">
       <mat-card class="example-card">
         <mat-card-content>
           <mat-card-header style="text-align: center;">
@@ -96,7 +96,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="col-7">
+    <div class="col-lg-7 mb-3">
       <mat-card class="example-card">
         <mat-card-content>
           <mat-card-header style="text-align: center;">
@@ -104,7 +104,9 @@
           </mat-card-header>
           <mat-card-content>
             <div class="row">
-              To do.........
+              <div class="col-12" *ngFor="let notice of noticeList">
+                <a routerLink="/notice/details">{{notice.noticeTitle}}</a>
+              </div>
             </div>
           </mat-card-content>
         </mat-card-content>

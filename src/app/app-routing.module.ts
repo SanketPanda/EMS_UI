@@ -5,6 +5,8 @@ import { DepartmentDetailsComponent } from './component/department/department-de
 import { DepartmentComponent } from './component/department/department.component';
 import { EmployeeDetailsComponent } from './component/employee/employee-details/employee-details.component';
 import { EmployeeComponent } from './component/employee/employee.component';
+import { NoticeDetailsComponent } from './component/notice/notice-details/notice-details.component';
+import { NoticeComponent } from './component/notice/notice.component';
 import { RoleDetailsComponent } from './component/role/role-details/role-details.component';
 import { RoleComponent } from './component/role/role.component';
 import { StaffLeaveDetailsComponent } from './component/staff-leave/staff-leave-details/staff-leave-details.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'department/details', component: DepartmentDetailsComponent },
   { path: 'staff-leave/create', component: StaffLeaveComponent },
   { path: 'staff-leave/details', component: StaffLeaveDetailsComponent },
+  { path: 'notice/create', component: NoticeComponent },
+  { path: 'notice/details', component: NoticeDetailsComponent },
 ];
 
 @NgModule({

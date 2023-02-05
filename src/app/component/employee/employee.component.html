@@ -1,62 +1,64 @@
-<mat-grid-list cols="1" rows="1" rowHeight="1.7:1.2">
-  <mat-grid-tile>
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title class="card-heading">{{title}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
-          <div class="row">
-            <div class="col">
-              <input type="hidden" formControlName="employeeId"/>
-              <label for="firstName"><b>First Name</b></label>
-              <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" class="form-control"
-                formControlName="firstName" required>
-              <div *ngIf="firstName && firstName.invalid && (firstName.dirty || firstName.touched)"
-                class="alert alert-danger">
-                <div *ngIf="firstName.errors?.['required']">
-                  First Name Name is required.
+<div class="container">
+  <div class="row">
+    <div class="container mt-5 ml-3 mr-3">
+      <div class="roleForm-container m-auto">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="card-heading">{{title}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+              <div class="row">
+                <div class="col">
+                  <input type="hidden" formControlName="employeeId" />
+                  <label for="firstName"><b>First Name</b></label>
+                  <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" class="form-control"
+                    formControlName="firstName" required>
+                  <div *ngIf="firstName && firstName.invalid && (firstName.dirty || firstName.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="firstName.errors?.['required']">
+                      First Name Name is required.
+                    </div>
+                    <div *ngIf="firstName.errors?.['minlength']">
+                      First Name must be at least 4 characters long.
+                    </div>
+                    <div *ngIf="firstName.errors?.['maxlength']">
+                      First Name must can not exceed 45 characters long.
+                    </div>
+                  </div>
                 </div>
-                <div *ngIf="firstName.errors?.['minlength']">
-                  First Name must be at least 4 characters long.
-                </div>
-                <div *ngIf="firstName.errors?.['maxlength']">
-                  First Name must can not exceed 45 characters long.
+                <div class="col">
+                  <label for="lastName"><b>Last Name</b></label>
+                  <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" class="form-control"
+                    formControlName="lastName" required>
+                  <div *ngIf="lastName && lastName.invalid && (lastName.dirty || lastName.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="lastName.errors?.['required']">
+                      Last Name Name is required.
+                    </div>
+                    <div *ngIf="lastName.errors?.['minlength']">
+                      Last Name must be at least 4 characters long.
+                    </div>
+                    <div *ngIf="lastName.errors?.['maxlength']">
+                      Last Name must can not exceed 45 characters long.
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <label for="lastName"><b>Last Name</b></label>
-              <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" class="form-control"
-                formControlName="lastName" required>
-              <div *ngIf="lastName && lastName.invalid && (lastName.dirty || lastName.touched)"
-                class="alert alert-danger">
-                <div *ngIf="lastName.errors?.['required']">
-                  Last Name Name is required.
+
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" id="email" class="form-control"
+                formControlName="email" required>
+              <div *ngIf="email && email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors?.['required']">
+                  Email is required.
                 </div>
-                <div *ngIf="lastName.errors?.['minlength']">
-                  Last Name must be at least 4 characters long.
-                </div>
-                <div *ngIf="lastName.errors?.['maxlength']">
-                  Last Name must can not exceed 45 characters long.
+                <div *ngIf="email.errors?.['email']">
+                  Must be a valid email.
                 </div>
               </div>
-            </div>
-          </div>
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" id="email" class="form-control"
-            formControlName="email" required>
-          <div *ngIf="email && email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-            <div *ngIf="email.errors?.['required']">
-              Email is required.
-            </div>
-            <div *ngIf="email.errors?.['email']">
-              Must be a valid email.
-            </div>
-          </div>
-
-          <!-- <div class="row" *ngIf="!editable">
+              <!-- <div class="row" *ngIf="!editable">
             <div class="col">
               <label for="password"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="password" id="password" class="form-control"
@@ -75,21 +77,24 @@
           </div> -->
 
 
-          <label for="address"><b>Address</b></label>
-          <textarea placeholder="Enter Description" name="description" id="description" rows="4" cols="50"
-            formControlName="address" required></textarea>
+              <label for="address"><b>Address</b></label>
+              <textarea placeholder="Enter Description" name="description" id="description" rows="4" cols="50"
+                formControlName="address" required></textarea>
 
-          <label for="department"><b>Department</b></label>
-          <mat-form-field appearance="fill">
-            <mat-label>Choose a Department</mat-label>
-            <mat-select formControlName="department" [(ngModel)]="selectedItem.name" (ngModelChange)="onDepartmentChange(selectedItem)">
-              <mat-option *ngFor="let department of departments"
-                [value]="department.name">{{department.name}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <button type="submit" class="btn btn-primary registerbtn" [disabled]="!employeeForm.valid">Submit</button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+              <label for="department"><b>Department</b></label>
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a Department</mat-label>
+                <mat-select formControlName="department" [(ngModel)]="selectedItem.name"
+                  (ngModelChange)="onDepartmentChange(selectedItem)">
+                  <mat-option *ngFor="let department of departments"
+                    [value]="department.name">{{department.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button type="submit" class="btn btn-primary registerbtn" [disabled]="!employeeForm.valid">Submit</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,24 +9,26 @@ import { environment } from '../environments/environment';
 })
 export class HttpServiceService {
 
+  baseUrl: string = environment.baseUrl;
+
   constructor(
     private http: HttpClient
   ) { }
 
   get(url: string): Observable<any>{
-    return this.http.get(environment.baseUrl+url);
+    return this.http.get(this.baseUrl+url);
   }
 
   post(url: string, content: any): Observable<any>{
-    return this.http.post(environment.baseUrl+url, content);
+    return this.http.post(this.baseUrl+url, content);
   }
 
   put(url: string, content: any): Observable<any>{
-    console.log('url is '+environment.baseUrl+url);
-    return this.http.put(environment.baseUrl+url, content);
+    console.log('url is '+this.baseUrl+url);
+    return this.http.put(this.baseUrl+url, content);
   }
 
   delete(url:string, contnet: any): Observable<any> {
-    return this.http.delete(environment.baseUrl+url, {body:contnet});
+    return this.http.delete(this.baseUrl+url, {body:contnet});
   }
 }

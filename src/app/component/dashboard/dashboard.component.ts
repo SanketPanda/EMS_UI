@@ -5,6 +5,7 @@ import { HttpServiceService } from 'src/app/service/http-service.service';
 import { DeleteHandlerComponent } from '../common/delete-handler/delete-handler.component';
 import { Department } from '../department/model/department';
 import { Employee } from '../employee/model/employee';
+import { Notice } from '../notice/model/notice';
 import { Role } from '../role/model/role';
 
 @Component({
@@ -17,6 +18,8 @@ export class DashboardComponent {
   totalEmployee: number = 0;
   totalDepartment: number = 0;
   totalRole: number = 0;
+  totalNotice: number = 0;
+  noticeList: Notice[] = [];
 
   constructor(
     private httpService: HttpServiceService,
@@ -26,6 +29,7 @@ export class DashboardComponent {
     this.getTotalEmployee();
     this.getTotalDepartment();
     this.getTotalRole();
+    this.getTotalNotice();
   }
 
   getTotalEmployee(){
@@ -49,6 +53,15 @@ export class DashboardComponent {
       .get(environment.roleUrl + '/list')
       .subscribe((data: Role[]) => {
         this.totalRole = data.length;
+      });
+  }
+
+  getTotalNotice(){
+    this.httpService
+      .get(environment.noticeUrl + '/list')
+      .subscribe((data: Notice[]) => {
+        this.noticeList = data;
+        this.totalNotice = data.length;
       });
   }
 

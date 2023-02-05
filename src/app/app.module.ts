@@ -32,6 +32,8 @@ import { DeleteHandlerComponent } from './component/common/delete-handler/delete
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { NoticeComponent } from './component/notice/notice.component';;
+import { NoticeDetailsComponent } from './component/notice/notice-details/notice-details.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     StaffLeaveComponent,
     StaffLeaveDetailsComponent,
     ErrorHandlerComponent,
-    DeleteHandlerComponent
+    DeleteHandlerComponent,
+    NoticeComponent,
+    NoticeDetailsComponent
   ],
   imports: [
     BrowserModule,

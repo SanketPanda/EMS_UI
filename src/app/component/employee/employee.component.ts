@@ -44,12 +44,6 @@ export class EmployeeComponent {
         Validators.email
       ]),
       employeeId: new FormControl(''),
-      // password: new FormControl('', [
-      //   Validators.required,
-      //   Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$"),
-      //   Validators.minLength(4),
-      //   Validators.maxLength(45),
-      // ]),
       address: new FormControl('', [
         Validators.minLength(4),
         Validators.maxLength(45),
